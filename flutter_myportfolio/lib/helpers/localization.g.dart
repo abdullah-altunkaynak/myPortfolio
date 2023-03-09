@@ -18,7 +18,21 @@ class Localization extends Translations {
           "aboutMyselfLong4":
               "I have knowledge and experience about monetization from the application, \"In-App Purchases Api\", \"Subscriptions\" and \"Google AdMob\". I follow the latest updates and information of libraries for Flutter and other languages through documentation and forms.",
           "aboutMyselfLong5":
-              "I have knowledge and experience in Agile and Scrum. I have had 6 months of experience. I had the chance to gain experience in Scrum by working on an American entrepreneurship project."
+              "I have knowledge and experience in Agile and Scrum. I have had 6 months of experience. I had the chance to gain experience in Scrum by working on an American entrepreneurship project.",
+          "mySkills": "My Skills",
+          "myProjects": "My Projects",
+          "kumlukInfo":
+              "This application, created with flutter for e-commerce, is an application where people can post advertisements and make a different trade by joining the application is symbolically named \"Kumluk\". The application cannot be used because its firebase is down.",
+          "yuyyu_adminpanelInfo":
+              "A large admin panel that I can use on the web for the management of the Yuyyu application. Yuyyu, which is an application that requires a lot of user interaction, can be kept under control more easily thanks to the admin panel.",
+          "yuyyu1Info":
+              "Yuyyu is a dating app. Yuyyu uses people's horoscope and location to calculate the percentage of compatibility between other people and the user. It aims to make people meet each other and interpret their horoscope.",
+          "yuyyu2Info":
+              "Yuyyu uses a special search algorithm within itself. Determining other users that the user will bring in front of him is done with a big and powerful algorithm and there are many variables. With the filtering system, we can make this algorithm user-friendly.",
+          "yuyyu3Info":
+              "There is a successful messaging system for people to communicate easily with each other. It has been prepared taking into account Whatsapp and many other application messaging.",
+          "yuyyuGooglePlay": "To see the yuyyu app on Google Play Store",
+          "tap": "Click"
         },
         "tr": {
           "topInfoBanner":
@@ -36,7 +50,22 @@ class Localization extends Translations {
           "aboutMyselfLong4":
               "Uygulamadan para kazanma, \"Uygulama İçi Satın Alma Api\", \"Abonelikler\" ve \"Google AdMob\" konularında bilgi ve tecrübe sahibiyim. Flutter ve diğer diller için kütüphanelerin en son güncellemelerini ve bilgilerini dokümantasyon ve formlar aracılığıyla takip ediyorum.",
           "aboutMyselfLong5":
-              "Agile ve Scrum konularında bilgi ve tecrübeye sahibim. 6 aylık tecrübem var. Bir Amerikan girişimcilik projesinde çalışarak Scrum deneyimi kazanma şansım oldu"
+              "Agile ve Scrum konularında bilgi ve tecrübeye sahibim. 6 aylık tecrübem var. Bir Amerikan girişimcilik projesinde çalışarak Scrum deneyimi kazanma şansım oldu",
+          "mySkills": "Yeteneklerim",
+          "myProjects": "Projelerim",
+          "kumlukInfo":
+              "E-ticaret için flutter ile oluşturulan bu uygulama, insanların uygulamaya katılarak ilan verebildiği ve farklı bir ticaret yapabileceği bir uygulamadır ve sembolik olarak \"Kumluk\" adını almıştır. Firebase kapalı olduğu için uygulama kullanılamıyor.",
+          "yuyyu_adminpanelInfo":
+              "Yuyyu uygulamasının yönetimi için web üzerinde kullanabileceğim büyük bir admin panel. Çok fazla kullanıcı etkileşimi gerektirek bir uygulama olan yuyyu, admin panel sayesinde daha rahat kontrol altında tutulabiliyor.",
+          "yuyyu1Info":
+              "Yuyyu bir dating uygulamasıdır. Yuyyu insanların burçlarını ve konumlarını kullanarak diğer insanlar ile kullanıcı arasındaki uyum yüzdesini hesaplar. İnsanların birbirleri ile tanışmasını ve burçlarını yorumlamayı amaçlar.",
+          "yuyyu2Info":
+              "Yuyyu kendi içerisinde özel bir arama algoritması kullanır. Kullanıcının karşısına çıkaracağı diğer kullanıcıları belirlemek büyük ve güçlü bir algoritma ile yapılır ve birçok değişken vardır. Filtreleme sistemi ile bu algoritmayı kullanıcı dostu hale getirebiliyoruz.",
+          "yuyyu3Info":
+              "İnsanların birbirleri ile kolayca iletişim kurması için başarılı bir mesajlaşma sistemi bulunmaktadır. Whatsapp ve diğer birçok uygulama mesajlaşması dikkate alınarak hazırlanmıştır.",
+          "yuyyuGooglePlay":
+              "Google Play Store'da yuyyu uygulamasını görmek için ",
+          "tap": "Tıkla"
         }
       };
 }
