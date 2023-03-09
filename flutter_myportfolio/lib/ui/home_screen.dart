@@ -1,10 +1,11 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
-
 import '../controller/main_controller.dart';
+import '../helpers/localization.g.dart';
 import '../helpers/sizes.dart';
 import '../model/language_enum.dart';
 
@@ -25,6 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
       ThemeData(primarySwatch: Colors.pink, brightness: Brightness.dark);
   double deviceWidth = Sizes.getWidth();
   double deviceHeight = Sizes.getHeight();
+  var sliderIndex = 0;
   @override
   Widget build(BuildContext context) {
     // Bu sayede ekran boyutu her değiştiğinde Sizes class'ı sayesinde Mediaquery boyutu değişecektir.
@@ -62,11 +64,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     )
                   ],
                 ),
-                separator(),
+                separator(width: deviceWidth - 50),
                 marginWidget(marginWidth: 0, marginHeight: 50),
                 aboutMyselfShort(),
                 marginWidget(marginWidth: 0, marginHeight: 50),
                 aboutMyself(),
+                marginWidget(marginWidth: 0, marginHeight: 50),
+                sectionHeader("mySkills".tr),
+                marginWidget(marginWidth: 0, marginHeight: 50),
+                mySkills(),
+                marginWidget(marginWidth: 0, marginHeight: 50),
+                sectionHeader("myProjects".tr),
+                marginWidget(marginWidth: 0, marginHeight: 50),
+                myProjects(),
+                marginWidget(marginWidth: 0, marginHeight: 50),
+                yuyyuLinks(),
                 marginWidget(marginWidth: 0, marginHeight: 50),
               ],
             ),
@@ -339,12 +351,12 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  separator() {
+  separator({double width = 10, double height = 1}) {
     return Center(
       // Separator
       child: Container(
-        width: deviceWidth - 50,
-        height: 1,
+        width: width,
+        height: height,
         color: Colors.grey,
       ),
     );
@@ -372,6 +384,604 @@ class _HomeScreenState extends State<HomeScreen> {
     return SizedBox(
       width: marginWidth,
       height: marginHeight,
+    );
+  }
+
+  mySkills() {
+    return Center(
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          marginWidget(marginWidth: 5),
+          Flexible(flex: 1, child: mySkillWidgetFlutter()),
+          marginWidget(marginWidth: 10),
+          Flexible(flex: 1, child: mySkillWidgetRNative()),
+          marginWidget(marginWidth: 10),
+          Flexible(flex: 1, child: mySkillWidgetOther()),
+          marginWidget(marginWidth: 5),
+        ],
+      ),
+    );
+  }
+
+  mySkillWidgetFlutter() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          border: Border.all(width: 1), borderRadius: BorderRadius.circular(5)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+              child: Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                child: Icon(
+                  FontAwesomeIcons.code,
+                  color: Colors.blue.shade700,
+                ),
+              ),
+              WidgetSpan(child: marginWidget(marginWidth: 10)),
+              TextSpan(
+                text: 'Flutter',
+                style: GoogleFonts.sono(
+                  textStyle: TextStyle(
+                      color: Colors.blue,
+                      fontSize: deviceWidth / 70 + deviceHeight / 70,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            ])),
+          )),
+          separator(width: deviceWidth / 5),
+          marginWidget(marginHeight: 20),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Advanced Asynchronous',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Packages & Plugins',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Responsive UI',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'State Management (Bloc, Getx, Riverpod..)',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Streams & Isolates & Event Loops',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Tests',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+        ],
+      ),
+    );
+  }
+
+  mySkillWidgetRNative() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          border: Border.all(width: 1), borderRadius: BorderRadius.circular(5)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+              child: Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                child: Icon(
+                  FontAwesomeIcons.connectdevelop,
+                  color: Colors.blue.shade700,
+                ),
+              ),
+              WidgetSpan(child: marginWidget(marginWidth: 10)),
+              TextSpan(
+                text: 'React Native',
+                style: GoogleFonts.sono(
+                  textStyle: TextStyle(
+                      color: Colors.blue,
+                      fontSize: deviceWidth / 70 + deviceHeight / 70,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            ])),
+          )),
+          separator(width: deviceWidth / 5),
+          marginWidget(marginHeight: 20),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Asynchronous',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Packages & Plugins',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Responsive UI',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'State Management',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Navigators',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Tests',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+        ],
+      ),
+    );
+  }
+
+  mySkillWidgetOther() {
+    return Container(
+      padding: EdgeInsets.all(20),
+      decoration: BoxDecoration(
+          border: Border.all(width: 1), borderRadius: BorderRadius.circular(5)),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Center(
+            child: Container(
+              child: RichText(
+                  text: TextSpan(children: [
+                WidgetSpan(
+                  child: Icon(
+                    FontAwesomeIcons.uncharted,
+                    color: Colors.deepOrangeAccent.shade700,
+                  ),
+                ),
+                WidgetSpan(child: marginWidget(marginWidth: 10)),
+                TextSpan(
+                  text: 'Other',
+                  style: GoogleFonts.sono(
+                    textStyle: TextStyle(
+                        color: Colors.deepOrangeAccent,
+                        fontSize: deviceWidth / 70 + deviceHeight / 70,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )
+              ])),
+            ),
+          ),
+          separator(width: deviceWidth / 5),
+          marginWidget(marginHeight: 20),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Firebase Services',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Mssql & Plsql & Nosql',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Python',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'C#',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Photoshop & Illustrator',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+          Container(
+            child: RichText(
+                text: TextSpan(children: [
+              WidgetSpan(
+                  child: Icon(
+                FontAwesomeIcons.check,
+                color: Colors.amber,
+              )),
+              WidgetSpan(child: marginWidget(marginWidth: 5)),
+              TextSpan(
+                  text: 'Github etc.',
+                  style: GoogleFonts.publicSans(
+                    textStyle: TextStyle(
+                        fontSize: deviceWidth / 100 + deviceHeight / 100,
+                        wordSpacing: 5,
+                        color: mainController.darkThemeBool.value
+                            ? Colors.white
+                            : Colors.black),
+                  ))
+            ])),
+          ),
+        ],
+      ),
+    );
+  }
+
+  sectionHeader(String text) {
+    return Text(
+      text,
+      overflow: TextOverflow.clip,
+      textAlign: TextAlign.center,
+      style: GoogleFonts.sono(
+        textStyle: TextStyle(
+          fontSize: deviceWidth / 50 + deviceHeight / 50,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+  }
+
+  myProjects() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+            width: deviceWidth / 1.5,
+            height: 500,
+            child: CarouselSlider.builder(
+              itemCount: mainController.sliderImagesTexts.length,
+              itemBuilder:
+                  (BuildContext context, int itemIndex, int pageViewIndex) {
+                sliderIndex = itemIndex;
+                return Container(
+                    padding: EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        border: Border.all(color: Colors.grey)),
+                    child: Row(
+                      children: [
+                        Flexible(
+                          flex: 2,
+                          child: Image.asset(
+                            mainController.sliderImagesTexts[itemIndex][0],
+                            height: 500,
+                          ),
+                        ),
+                        marginWidget(marginWidth: 20),
+                        Flexible(
+                          flex: 1,
+                          child: Text(
+                              mainController.sliderImagesTexts[itemIndex][1].tr,
+                              style: GoogleFonts.publicSans(
+                                textStyle: TextStyle(
+                                    fontSize:
+                                        deviceWidth / 120 + deviceHeight / 120,
+                                    wordSpacing: 5),
+                              )),
+                        )
+                      ],
+                    ));
+              },
+              options: CarouselOptions(
+                autoPlay: false,
+                enlargeCenterPage: true,
+              ),
+            )),
+      ],
+    );
+  }
+
+  yuyyuLinks() {
+    return Row(
+      children: [
+        marginWidget(marginWidth: 30),
+        Text('yuyyuGooglePlay'.tr,
+            style: GoogleFonts.publicSans(
+              textStyle: TextStyle(
+                  fontSize: deviceWidth / 150 + deviceHeight / 150,
+                  color: Colors.grey),
+            )),
+        marginWidget(marginWidth: 10),
+        InkWell(
+          child: Text('tap'.tr,
+              style: GoogleFonts.publicSans(
+                textStyle: TextStyle(
+                    fontSize: deviceWidth / 150 + deviceHeight / 150,
+                    wordSpacing: 5,
+                    color: Colors.green),
+              )),
+          onTap: () => launchUrl(Uri.parse(
+              'https://play.google.com/store/apps/details?id=com.yuyyu.horoscopematch')),
+        )
+      ],
     );
   }
 }
