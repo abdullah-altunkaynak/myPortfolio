@@ -32,7 +32,15 @@ class Localization extends Translations {
           "yuyyu3Info":
               "There is a successful messaging system for people to communicate easily with each other. It has been prepared taking into account Whatsapp and many other application messaging.",
           "yuyyuGooglePlay": "To see the yuyyu app on Google Play Store",
-          "tap": "Click"
+          "tap": "Click",
+          "codetalksInfo":
+              "You can log in, create a private room and chat. You can reach this application that I made during the React Native learning process on github.",
+          "kodworkInfo":
+              "Simple \"Linkedin\" style is a sample project for job search, job posting. React Native is used and includes favorite and unfavorite. You can find the codes on my github.",
+          "todoInfo":
+              "It is a simple todo application, you can access the codes on github.",
+          "recipeInfo":
+              "You can reach this project, where I present the recipes to the user using the API, on my github address."
         },
         "tr": {
           "topInfoBanner":
@@ -65,7 +73,15 @@ class Localization extends Translations {
               "İnsanların birbirleri ile kolayca iletişim kurması için başarılı bir mesajlaşma sistemi bulunmaktadır. Whatsapp ve diğer birçok uygulama mesajlaşması dikkate alınarak hazırlanmıştır.",
           "yuyyuGooglePlay":
               "Google Play Store'da yuyyu uygulamasını görmek için ",
-          "tap": "Tıkla"
+          "tap": "Tıkla",
+          "codetalksInfo":
+              "Giriş yapabilirsiniz, özel bir oda oluşturup sohbet edebilirsiniz. React Native öğrenim sürecinde yaptığım bu uygulamaya github üzerinden ulaşabilirsiniz.",
+          "kodworkInfo":
+              "Basit \"Linkedin\" tarzı iş aramak, iş ilanı koymak için yapılmış örnek projedir. React Native kullanılmıştır ve favorileme favoriden kaldırma işlemlerini de içerisinde barındırır. Kodlara github'ım üzerinden ulaşabilirsiniz.",
+          "todoInfo":
+              "Basit todo uygulamasıdır kodlara github üzerinden ulaşabilirsiniz.",
+          "recipeInfo":
+              "API kullanılarak yemek tariflerini kullanıcıya sunduğum bu projeme github adresim üzerinden ulaşabilirsiniz."
         }
       };
 }

@@ -11,6 +11,10 @@ class MainController extends GetxController {
     ["assets/image/yuyyu_adminpanel.png", "yuyyu_adminpanelInfo"],
     ["assets/image/yuyyu1.png", "yuyyu1Info"],
     ["assets/image/yuyyu2.png", "yuyyu2Info"],
-    ["assets/image/yuyyu3.png", "yuyyu3Info"]
+    ["assets/image/yuyyu3.png", "yuyyu3Info"],
+    ["assets/image/codetalks.gif", "codetalksInfo"],
+    ["assets/image/kodwork.gif", "kodworkInfo"],
+    ["assets/image/todo.gif", "todoInfo"],
+    ["assets/image/yemektarifim.gif", "recipeInfo"],
   ];
 }
