@@ -40,7 +40,13 @@ class Localization extends Translations {
           "todoInfo":
               "It is a simple todo application, you can access the codes on github.",
           "recipeInfo":
-              "You can reach this project, where I present the recipes to the user using the API, on my github address."
+              "You can reach this project, where I present the recipes to the user using the API, on my github address.",
+          "icanWorkYou":
+              "I can work for you, provide software support to your project and code your dream application/site.",
+          "vision":
+              "My vision is to be a top-level software developer who can write code in any language and put what's on his mind in the cleanest way possible.",
+          "motto":
+              "Technology never stands still, you must constantly learn and improve yourself."
         },
         "tr": {
           "topInfoBanner":
@@ -81,7 +87,13 @@ class Localization extends Translations {
           "todoInfo":
               "Basit todo uygulamasıdır kodlara github üzerinden ulaşabilirsiniz.",
           "recipeInfo":
-              "API kullanılarak yemek tariflerini kullanıcıya sunduğum bu projeme github adresim üzerinden ulaşabilirsiniz."
+              "API kullanılarak yemek tariflerini kullanıcıya sunduğum bu projeme github adresim üzerinden ulaşabilirsiniz.",
+          "icanWorkYou":
+              "Sizin için çalışabilirim, projenize yazılımsal destek verebilirim ve hayalinizdeki uygulamayı/siteyi kodlayabilirim.",
+          "vision":
+              "Vizyonum her dilde kod yazabilen ve aklındakini koda en temiz şekilde dökebilen üst düzey bir yazılımcı olmak.",
+          "motto":
+              "Teknoloji asla yerinde durmaz, sürekli öğrenmeli ve kendini geliştirmelisin."
         }
       };
 }
