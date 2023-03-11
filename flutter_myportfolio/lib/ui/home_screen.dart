@@ -80,6 +80,10 @@ class _HomeScreenState extends State<HomeScreen> {
                 marginWidget(marginWidth: 0, marginHeight: 50),
                 yuyyuLinks(),
                 marginWidget(marginWidth: 0, marginHeight: 50),
+                separator(width: deviceWidth - 50),
+                marginWidget(marginWidth: 0, marginHeight: 50),
+                footerSection(),
+                marginWidget(marginWidth: 0, marginHeight: 50),
               ],
             ),
           ),
@@ -101,19 +105,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.red,
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    "assets/image/1.gif",
+                    height: 500,
+                  ),
                 ),
                 marginWidget(marginWidth: 0, marginHeight: 20),
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.orange,
+                  color: Colors.transparent,
                 ),
                 marginWidget(marginWidth: 0, marginHeight: 20),
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.yellow,
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    "assets/image/3.gif",
+                    height: 500,
+                  ),
                 )
               ],
             ),
@@ -124,19 +136,23 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.red,
+                  color: Colors.transparent,
                 ),
                 marginWidget(marginWidth: 0, marginHeight: 20),
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.orange,
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    "assets/image/4.gif",
+                    height: 500,
+                  ),
                 ),
                 marginWidget(marginWidth: 0, marginHeight: 20),
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.yellow,
+                  color: Colors.transparent,
                 )
               ],
             ),
@@ -146,19 +162,27 @@ class _HomeScreenState extends State<HomeScreen> {
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.red,
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    "assets/image/5.gif",
+                    height: 500,
+                  ),
                 ),
                 marginWidget(marginWidth: 0, marginHeight: 20),
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.orange,
+                  color: Colors.transparent,
                 ),
                 marginWidget(marginWidth: 0, marginHeight: 20),
                 Container(
                   width: _width / 3 - 20,
                   height: deviceHeight / 3 - 40,
-                  color: Colors.yellow,
+                  color: Colors.transparent,
+                  child: Image.asset(
+                    "assets/image/2.gif",
+                    height: 500,
+                  ),
                 )
               ],
             )
@@ -335,7 +359,28 @@ class _HomeScreenState extends State<HomeScreen> {
                         },
                         icon: Icon(
                           FontAwesomeIcons.medium,
-                        ))
+                        )),
+                    marginWidget(marginWidth: 50),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SelectableText(
+                            'Email: abdullah.altunkaynak@outlook.com',
+                            style: GoogleFonts.publicSans(
+                              textStyle: TextStyle(
+                                  fontSize:
+                                      deviceWidth / 140 + deviceHeight / 140,
+                                  wordSpacing: 5),
+                            )),
+                        SelectableText('GSM: +90 507 798 97 55',
+                            style: GoogleFonts.publicSans(
+                              textStyle: TextStyle(
+                                  fontSize:
+                                      deviceWidth / 140 + deviceHeight / 140,
+                                  wordSpacing: 5),
+                            ))
+                      ],
+                    ),
                   ],
                 )
               ],
@@ -982,6 +1027,51 @@ class _HomeScreenState extends State<HomeScreen> {
               'https://play.google.com/store/apps/details?id=com.yuyyu.horoscopematch')),
         )
       ],
+    );
+  }
+
+  footerSection() {
+    return Center(
+      child: Container(
+        width: deviceWidth,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "icanWorkYou".tr,
+              style: GoogleFonts.sono(
+                textStyle: TextStyle(
+                    fontSize: deviceWidth / 140 + deviceHeight / 140,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            marginWidget(marginHeight: 10),
+            Text(
+              "vision".tr,
+              style: GoogleFonts.sono(
+                textStyle: TextStyle(
+                    fontSize: deviceWidth / 140 + deviceHeight / 140,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
+              ),
+              textAlign: TextAlign.center,
+            ),
+            marginWidget(marginHeight: 10),
+            Text(
+              "motto".tr,
+              style: GoogleFonts.sono(
+                textStyle: TextStyle(
+                    fontSize: deviceWidth / 140 + deviceHeight / 140,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.grey),
+              ),
+              textAlign: TextAlign.center,
+            )
+          ],
+        ),
+      ),
     );
   }
 }
